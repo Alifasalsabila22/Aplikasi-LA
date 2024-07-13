@@ -29,13 +29,20 @@
                 </div>
                 <div class="card-body">
                     <div class="mb-3">
-                        <strong>Jenjang</strong>
-                        <p class="form-control-static">{{ $kategori->jenjang }}</p>
+                        <label for="jenjang" class="form-label">
+                            <strong>Jenjang:</strong>
+                        </label>
+                            <input type="text" name="jenjang" value="{{ $kategori->jenjang }}" class="form-control"
+                                placeholder="Jenjang" disabled>
                     </div>
                     <div class="mb-3">
-                        <strong>Kelas:</strong>
-                        <p class="form-control-static">{{ $kategori->kelas }}</p>
+                        <label for="jenjang" class="form-label">
+                            <strong>Kelas :</strong>
+                        </label>
+                            <input type="text" name="jenjang" value="{{ $kategori->kelas }}" class="form-control"
+                                placeholder="Jenjang" disabled>
                     </div>
+
                 </div>
             </div>
         </div>

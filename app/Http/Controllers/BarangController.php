@@ -39,21 +39,27 @@ class BarangController extends Controller
                 ->addColumn('action', function ($row) {
                     $btn = '
                     <form action="' . route('barangs.destroy', $row->id) . '" method="POST" style="display:inline;">
-                        <a class="btn btn-info" href="' . route('barangs.show', $row->id) . '"><i class="fas fa-eye"></i></a>
-                        <a class="btn btn-primary" href="' . route('barangs.edit', $row->id) . '"><i class="fas fa-edit"></i></a>
+                        <a class="btn btn-info" href="' . route('barangs.show', $row->id) . '">
+                            <i class="fas fa-eye"></i>
+                        </a>
+                        <button type="button" class="btn btn-primary edit-btn" data-id="' . $row->id . '" data-toggle="modal" data-target="#editModal">
+                            <i class="fas fa-edit"></i>
+                        </button>
                         ' . csrf_field() . '
                         ' . method_field('DELETE') . '
                         <button type="submit" class="btn btn-danger" onclick="return confirm(\'Are you sure you want to delete this item?\')">
                             <i class="fas fa-trash"></i>
                         </button>
                     </form>';
-                    return $btn;
-                })->addColumn('jenjang', function ($row) {
+                return $btn;
+
+                })
+                ->addColumn('jenjang', function ($row) {
                     return $row->kategori->jenjang;
-                })->addColumn('kelas', function ($row) {
+                })
+                ->addColumn('kelas', function ($row) {
                     return $row->kategori->kelas;
                 })
-
                 ->rawColumns(['action'])
                 ->make(true);
         }
@@ -104,26 +110,13 @@ class BarangController extends Controller
         return view('barangs.show', compact('barang'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        $barang = Barang::findOrFail($id);
-        $kategoris = Kategori::all();
-        return view('barangs.edit', compact('barang', 'kategoris'));
-    }
+   public function edit($id){
+    $barang = Barang::find($id);
+    return response()->json($barang);
+   }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+
+
     public function update(Request $request, $id)
     {
         $request->validate([

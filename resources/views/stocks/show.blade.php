@@ -29,20 +29,24 @@
                 </div>
                 <div class="card-body">
                     <div class="mb-3">
-                        <strong>Judul Buku:</strong>
-                        <p class="form-control-static">{{ $stock->barang->judul }}</p>
+                        <label for="judul_Buku"><strong>Judul Buku:</strong></label>
+                        <input type="text" class="form-control border-primary" id="judul_Buku" name="judul_Buku"
+                            value="{{ $stock->barang->judul }}" disabled />
                     </div>
                     <div class="mb-3">
-                        <strong>Kelas:</strong>
-                        <p class="form-control-static">{{ $stock->kategori->kelas }}</p>
+                        <label for="kelas"><strong>Kelas:</strong></label>
+                        <input type="text" class="form-control border-primary" id="kelas" name="kelas"
+                            value="{{ $stock->kategori->kelas }}" disabled />
                     </div>
                     <div class="mb-3">
-                        <strong>Kategori:</strong>
-                        <p class="form-control-static">{{ $stock->kategori->jenjang }}</p>
+                        <label for="kategori"><strong>Kategori:</strong></label>
+                        <input type="text" class="form-control border-primary" id="kategori" name="kategori"
+                            value="{{ $stock->kategori->jenjang }}" disabled />
                     </div>
                     <div class="mb-3">
-                        <strong>Stock:</strong>
-                        <p class="form-control-static">{{ $stock->stock }}</p>
+                        <label for="stock"><strong>Stock:</strong></label>
+                        <input type="text" class="form-control border-primary" id="stock" name="stock"
+                            value="{{ $stock->stock}}" disabled />
                     </div>
                 </div>
             </div>

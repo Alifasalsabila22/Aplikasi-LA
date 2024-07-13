@@ -28,19 +28,29 @@
                     <div class="card-body">
                         <form action="{{ route('transaksis.store') }}" method="POST">
                             @csrf
-                            <div class="form-group mb-3">
-                                <label for="no_transaksi"><strong>No Transaksi:</strong></label>
-                                <input type="text" name="no_transaksi" class="form-control"
-                                    placeholder="Nomor Transaksi">
+                            <div class="form-row">
+                                <div class="form-group col-md-6 mb-3">
+                                    <label for="no_transaksi"><strong>No Transaksi:</strong></label>
+                                    <input type="text" name="no_transaksi" class="form-control"
+                                        placeholder="Nomor Transaksi">
+                                </div>
+                                <div class="form-group col-md-6 mb-3">
+                                    <label for="tanggal_keluar"><strong>Tanggal Keluar:</strong></label>
+                                    <input type="date" name="tanggal_keluar" class="form-control"
+                                        placeholder="Tanggal Keluar">
+                                </div>
                             </div>
-                            <div class="form-group mb-3">
-                                <label for="tanggal_keluar"><strong>Tanggal Keluar:</strong></label>
-                                <input type="date" name="tanggal_keluar" class="form-control"
-                                    placeholder="Tanggal Keluar">
-                            </div>
-                            <div class="form-group mb-3">
-                                <label for="id_gudang"><strong>Lokasi Gudang:</strong></label>
-                                <input type="text" id="lokasi_gudang" class="form-control" readonly>
+                            <div class="form-row">
+                                <div class="form-group col-md-6 mb-3">
+                                    <label for="id_gudang"><strong>Lokasi Gudang:</strong></label>
+                                    <input type="text" id="lokasi_gudang" class="form-control" readonly>
+                                </div>
+                                <div class="form-group col-md-6 mb-3">
+                                    <label for="status"><strong>Status:</strong></label>
+                                    <input type="text" id="status" name="status" value="out" class="form-control"
+                                    placeholder="out" readonly>
+
+                                </div>
                             </div>
                             <div class="form-row">
                                 <div class="form-group col-md-6 mb-3">
@@ -76,16 +86,9 @@
                                         placeholder="Total Stock" readonly>
                                 </div>
                             </div>
-                            <div class="form-group mb-3">
-                                <label for="status"><strong>Status:</strong></label>
-                                <select name="status" id="status" class="form-control">
-                                    <option value="">Select Status</option>
-                                    <option value="in">In</option>
-                                    <option value="out">Out</option>
-                                </select>
-                            </div>
+
                             <div class="text-right">
-                                <button type="submit" class="btn btn-success">Submit</button>
+                                <button type="submit" class="btn btn-primary">Submit</button>
                             </div>
                         </form>
                     </div>

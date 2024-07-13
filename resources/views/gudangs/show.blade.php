@@ -29,16 +29,19 @@
                 </div>
                 <div class="card-body">
                     <div class="mb-3">
-                        <strong>Kode Perwakilan Regional:</strong>
-                        <p class="form-control-static">{{ $gudang->kode_perwakilan_regional }}</p>
+                        <label for="kode_perwakilan_regional" class="form-label">Kode Perwakilan Regional</label>
+                        <input type="text" name="kode_perwakilan_regional" value="{{$gudang->kode_perwakilan_regional}}" class="form-control"
+                            placeholder="Kode Perwakilan Regional" disabled>
                     </div>
                     <div class="mb-3">
-                        <strong>Lokasi Gudang:</strong>
-                        <p class="form-control-static">{{ $gudang->lokasi_gudang }}</p>
+                        <label for="kode_perwakilan_regional" class="form-label">Lokasi Gudang</label>
+                        <input type="text" name="kode_perwakilan_regional" value="{{$gudang->lokasi_gudang}}" class="form-control"
+                            placeholder="Kode Perwakilan Regional" disabled>
                     </div>
                     <div class="mb-3">
-                        <strong>Nomor Gudang:</strong>
-                        <p class="form-control-static">{{ $gudang->no_gudang }}</p>
+                        <label for="kode_perwakilan_regional" class="form-label">Nomor Gudang</label>
+                        <input type="text" name="kode_perwakilan_regional" value="{{$gudang->no_gudang}}" class="form-control"
+                            placeholder="Kode Perwakilan Regional" disabled>
                     </div>
                 </div>
             </div>

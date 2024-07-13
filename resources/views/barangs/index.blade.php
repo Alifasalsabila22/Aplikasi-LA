@@ -164,4 +164,76 @@
             </div>
         </div>
     </div>
+
+   <!-- Modal -->
+<div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header bg-primary text-white">
+                <h3 class="mb-0">Form Edit Barang</h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="editForm" action="" method="POST">
+                    @csrf
+                    @method('PUT')
+                    <div class="row mt-4">
+                        <div class="col-md-6">
+                            <label for="kode_buku" class="form-label"><strong>Kode Buku:</strong></label>
+                            <input type="text" id="kode_buku" name="kode_buku" class="form-control" placeholder="Kode Buku">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="judul" class="form-label"><strong>Judul:</strong></label>
+                            <input type="text" id="judul" name="judul" class="form-control" placeholder="Judul">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="id_kategori" class="form-label"><strong>Kelas:</strong></label>
+                            <select id="id_kategori" class="form-control" name="id_kategori" required>
+                                <option value="">Select Kelas</option>
+                                @foreach ($kategoris as $kategori)
+                                    <option value="{{ $kategori->id }}">{{ $kategori->kelas }} / {{ $kategori->jenjang }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="penerbit" class="form-label"><strong>Penerbit:</strong></label>
+                            <input type="text" id="penerbit" name="penerbit" class="form-control" placeholder="Penerbit">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="tahun_terbit" class="form-label"><strong>Tahun Terbit:</strong></label>
+                            <input type="text" id="tahun_terbit" name="tahun_terbit" class="form-control" placeholder="Tahun Terbit">
+                        </div>
+                    </div>
+                    <div class="text-center mt-3">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(document).on('click', '.edit-btn', function() {
+        var id = $(this).data('id');
+        $.ajax({
+            url: '/barangs/' + id + '/edit',
+            method: 'GET',
+            success: function(data) {
+                $('#editForm').attr('action', '/barangs/' + id);
+                $('#kode_buku').val(data.kode_buku);
+                $('#judul').val(data.judul);
+                $('#id_kategori').val(data.id_kategori);
+                $('#penerbit').val(data.penerbit);
+                $('#tahun_terbit').val(data.tahun_terbit);
+                $('#editModal').modal('show');
+            }
+        });
+    });
+</script>
+
+
 @endsection

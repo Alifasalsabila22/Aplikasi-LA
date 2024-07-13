@@ -1,10 +1,17 @@
 @extends('layout')
 
+<style>
+    .dataTables_wrapper .col-sm-12 {
+        overflow: hidden;
+        overflow-x: auto;
+    }
+</style>
+
 @section('content')
     <div class="row mt-4">
         <div class="col-lg-12 d-flex justify-content-between align-items-center">
             <h2 class="text-primary"><i class="fas fa-boxes mr-2"></i> Data Barang Keluar</h2>
-            <a class="btn btn-success" href="{{ route('create.transaksibarangkeluar') }}"><i
+            <a class="btn btn-primary" href="{{ route('create.transaksibarangkeluar') }}"><i
                     class="fas fa-plus mr-1"></i>Create New
                 Transaksi</a>
         </div>

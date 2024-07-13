@@ -38,7 +38,7 @@
                         </div>
                         <div class="mb-3">
                             <label for="kelas" class="form-label"><strong>Kelas:</strong></label>
-                            <input type="text" class="form-control" name="kelas" placeholder="kelas">
+                            <input type="text" class="form-control" value="{{ $kategori->kelas }}" name="kelas" placeholder="kelas">
                         </div>
 
                         <div class="text-center mt-3">

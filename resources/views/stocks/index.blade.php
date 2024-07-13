@@ -4,7 +4,7 @@
     <div class="row mt-4">
         <div class="col-lg-12 d-flex justify-content-between align-items-center">
             <h2 class="text-primary"><i class="fas fa-cubes mr-2"></i> Stock</h2>
-            <a class="btn btn-success" href="{{ route('stocks.create') }}"><i class="fas fa-plus mr-1"></i>Create New
+            <a class="btn btn-primary" href="{{ route('stocks.create') }}"><i class="fas fa-plus mr-1"></i>Create New
                 Stock</a>
         </div>
     </div>

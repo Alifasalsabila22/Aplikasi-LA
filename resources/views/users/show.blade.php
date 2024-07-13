@@ -21,18 +21,19 @@
                     </div>
                     <div class="card-body">
                         <div class="form-group">
-                            <strong>Name:</strong>
-                            <p>{{ $user->name }}</p>
+                            <label for="name" class="form-label"><strong>Name :</strong></label>
+                            <input type="text"  disabled value="{{ $user->name }}" class="form-control" />
                         </div>
                         <div class="form-group">
-                            <strong>Email:</strong>
-                            <p>{{ $user->email }}</p>
+                            <label for="email" class="form-label"><strong>Email :</strong></label>
+                            <input type="text"  disabled value="{{ $user->email }}" class="form-control" />
                         </div>
                         <div class="form-group">
-                            <strong>Roles:</strong>
+                            <label for="Role" class="form-label"><strong>Role :</strong></label>
                             @if (!empty($user->getRoleNames()))
                                 @foreach ($user->getRoleNames() as $v)
-                                    <span class="badge badge-success">{{ $v }}</span>
+                                <input type="text"  disabled value="{{ $v }}" class="form-control" />
+
                                 @endforeach
                             @endif
                         </div>

@@ -4,7 +4,7 @@
     <div class="row mt-4">
         <div class="col-lg-12 d-flex justify-content-between align-items-center">
             <h2 class="text-primary">Manage Role</h2>
-            <a class="btn btn-success" href="{{ route('roles.create') }}"><i class="fas fa-plus mr-1"></i>Create New Role</a>
+            <a class="btn btn-primary" href="{{ route('roles.create') }}"><i class="fas fa-plus mr-1"></i>Create New Role</a>
         </div>
     </div>
 

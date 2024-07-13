@@ -42,10 +42,10 @@ class TransaksiController extends Controller
                 ->addIndexColumn()
                 ->addColumn('action', function ($row) {
                     $btn = '
-                <a class="btn btn-info btn-sm me-1" href="' . route('transaksis.show', $row->id) . '"><i class="fas fa-eye"></a>
-                <form action="' . route('transaksis.destroy', $row->id) . '" method="POST" style="display:inline-block;">
+                    <form action="' . route('transaksis.destroy', $row->id) . '" method="POST" style="display:inline-block;">
+                    <a class="btn btn-info btn-sm me-1" href="' . route('transaksis.show', $row->id) . '"><i class="fas fa-eye"></i></a>
                     ' . csrf_field() . method_field('DELETE') . '
-                    <button type="submit" class="btn btn-danger btn-sm"><i class="fas fa-trash"></button>
+                    <button type="submit" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></button>
                 </form>';
                     return $btn;
                 })
@@ -104,11 +104,11 @@ class TransaksiController extends Controller
                 ->addIndexColumn()
                 ->addColumn('action', function ($row) {
                     $btn = '
-                <a class="btn btn-info btn-sm me-1" href="' . route('transaksis.show', $row->id) . '"><i class="fas fa-eye"></a>
-               
-                <form action="' . route('transaksis.destroy', $row->id) . '" method="POST" style="display:inline-block;">
+
+                    <form action="' . route('transaksis.destroy', $row->id) . '" method="POST" style="display:inline-block;">
+                    <a class="btn btn-info btn-sm me-1" href="' . route('transaksis.show', $row->id) . '"><i class="fas fa-eye"></i></a>
                     ' . csrf_field() . method_field('DELETE') . '
-                    <button type="submit" class="btn btn-danger btn-sm"><i class="fas fa-trash"></button>
+                    <button type="submit" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></button>
                 </form>';
                     return $btn;
                 })
@@ -261,7 +261,7 @@ class TransaksiController extends Controller
         $barang = Barang::find($input['id_barang']);
         // $input['id_kategori'] = $barang->id_kategori;
 
-        if ($request->status == "in") {
+        if ($request->status == "In") {
             // $transaksi = Transaksi::where('id_barang', '=', $request->id_barang)->first();
             // dd($request->id_barang);
             $stock = Stock::where('id_barang', '=', $request->id_barang)->first();
@@ -292,7 +292,7 @@ class TransaksiController extends Controller
         Transaksi::create($input);
 
 
-        if ($request->status == "in") {
+        if ($request->status == "In") {
             return redirect()->route('transaksis.index')->with('success', 'Transaction stored successfully');
         } else {
             return redirect()->route('transaksi.out')->with('success', 'Transaction stored successfully');
@@ -346,7 +346,12 @@ class TransaksiController extends Controller
     public function destroy($id)
     {
         $transaksi = Transaksi::findOrFail($id);
+        // dd($transaksi);
         $transaksi->delete();
-        return redirect()->route('transaksis.index')->with('success', 'Transaction deleted successfully');
+        if ($transaksi->status == "in") {
+            return redirect()->route('transaksis.index')->with('success', 'Transaction Delete successfully');
+        } else {
+            return redirect()->route('transaksi.out')->with('success', 'Transaction Delete Success');
+        }
     }
 }

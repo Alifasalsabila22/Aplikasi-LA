@@ -29,42 +29,51 @@
             <div class="row mb-3">
                 <div class="col-md-6">
                     <div class="mb-3">
-                        <strong>No Transaksi:</strong>
-                        <p class="form-control-plaintext">{{ $transaksi->no_transaksi }}</p>
+                        <label><strong>No Transaksi :</strong></label>
+                        <input type="text" class="form-control border-primary" id="transaksi" name="transaksi"
+                            value="{{ $transaksi->no_transaksi }}" placeholder="Transaksi" disabled/>
                     </div>
                     <div class="mb-3">
-                        <strong>Tanggal keluar:</strong>
-                        <p class="form-control-plaintext">{{ $transaksi->tanggal_keluar }}</p>
+                        <label><strong>Tanggal Keluar :</strong></label>
+                        <input type="text" class="form-control border-primary" id="transaksi" name="transaksi"
+                            value="{{ $transaksi->tanggal_keluar }}" placeholder="Transaksi" disabled/>
                     </div>
                     <div class="mb-3">
-                        <strong>Lokasi Gudang:</strong>
-                        <p class="form-control-plaintext">{{ $transaksi->rak->gudang->lokasi_gudang }}</p>
+                        <label><strong>Lokasi Gudang :</strong></label>
+                        <input type="text" class="form-control border-primary" id="transaksi" name="transaksi"
+                            value="{{ $transaksi->rak->gudang->lokasi_gudang }}" placeholder="Transaksi" disabled/>
                     </div>
                     <div class="mb-3">
-                        <strong>Judul Buku:</strong>
-                        <p class="form-control-plaintext">{{ $transaksi->barang->judul }}</p>
+                        <label><strong>Judul Buku :</strong></label>
+                        <input type="text" class="form-control border-primary" id="transaksi" name="transaksi"
+                            value="{{ $transaksi->barang->judul }}" placeholder="Transaksi" disabled/>
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="mb-3">
-                        <strong>Kelas:</strong>
-                        <p class="form-control-plaintext">{{ $transaksi->barang->kategori->kelas }}</p>
+                        <label><strong>Kelas :</strong></label>
+                        <input type="text" class="form-control border-primary" id="transaksi" name="transaksi"
+                            value="{{ $transaksi->barang->kategori->kelas }}" placeholder="Transaksi" disabled/>
                     </div>
                     <div class="mb-3">
-                        <strong>Jenjang:</strong>
-                        <p class="form-control-plaintext">{{ $transaksi->barang->kategori->jenjang }}</p>
+                        <label><strong>Jenjang :</strong></label>
+                        <input type="text" class="form-control border-primary" id="transaksi" name="transaksi"
+                            value="{{ $transaksi->barang->kategori->jenjang }}" placeholder="Transaksi" disabled/>
                     </div>
                     <div class="mb-3">
-                        <strong>Jumlah Keluar:</strong>
-                        <p class="form-control-plaintext">{{ $transaksi->jumlah_keluar }}</p>
+                        <label><strong>Jumlah Keluar:</strong></label>
+                        <input type="text" class="form-control border-primary" id="transaksi" name="transaksi"
+                            value="{{ $transaksi->jumlah_keluar }}" placeholder="Transaksi" disabled/>
                     </div>
                     <div class="mb-3">
-                        <strong>Total Stock:</strong>
-                        <p class="form-control-plaintext">{{ $transaksi->total_stock }}</p>
+                        <label><strong>Total Stock :</strong></label>
+                        <input type="text" class="form-control border-primary" id="transaksi" name="transaksi"
+                            value="{{ $transaksi->total_stock }}" placeholder="Transaksi" disabled/>
                     </div>
                     <div class="mb-3">
-                        <strong>Status:</strong>
-                        <p class="form-control-plaintext">{{ $transaksi->status }}</p>
+                        <label><strong>Status :</strong></label>
+                        <input type="text" class="form-control border-primary" id="transaksi" name="transaksi"
+                            value="{{ $transaksi->status }}" placeholder="Transaksi" disabled/>
                     </div>
                 </div>
             </div>

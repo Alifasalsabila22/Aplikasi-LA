@@ -22,7 +22,7 @@
     @endif
 
     <div class="row mt-3 justify-content-center">
-        <div class="col-lg-8">
+        <div class="col-lg-12">
             <div class="card shadow-sm rounded">
                 <div class="card-body">
                     {!! Form::model($user, ['method' => 'PATCH', 'route' => ['users.update', $user->id]]) !!}

@@ -3,10 +3,8 @@
 @section('content')
     <div class="row">
         <div class="col-lg-12 margin-tb">
-            <div class="pull-left py-4">
+            <div class="pull-left py-4 d-flex justify-content-between ">
                 <h2>Add Barang Masuk </h2>
-            </div>
-            <div class="col-md-12 text-right">
                 <a class="btn btn-primary" href="{{ route('transaksis.index') }}"> Back</a>
             </div>
         </div>
@@ -85,11 +83,8 @@
                         </div>
                         <div class="form-group">
                             <label for="status">Status:</label>
-                            <select name="status" id="status" class="form-control">
-                                <option value="">Select Status</option>
-                                <option value="in">In</option>
-                                <option value="out">Out</option>
-                            </select>
+                            <input type="text" id="status" name="status" value="In" class="form-control"
+                                placeholder="In" readonly>
                         </div>
                     </div>
                 </div>

@@ -22,7 +22,7 @@
     @endif
 
     <div class="row mt-3 justify-content-center">
-        <div class="col-lg-8">
+        <div class="col-lg-12">
             <div class="card mx-auto shadow-sm rounded">
                 <div class="card-body">
                     <form action="{{ route('users.store') }}" method="POST" enctype="multipart/form-data">

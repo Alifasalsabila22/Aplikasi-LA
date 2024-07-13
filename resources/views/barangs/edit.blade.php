@@ -1,6 +1,32 @@
 @extends('layout')
 
 @section('content')
+
+    <div class="row mt-3 mb-4 align-items-center">
+        <div class="col-lg-6">
+            <h2 class="mb-0">
+                <i class="fas fa-info-circle mr-2"></i> Edit Data Barang
+            </h2>
+        </div>
+        <div class="col-lg-6 text-right">
+            <a class="btn btn-primary" href="{{ route('barangs.index') }}">
+                <i class="fas fa-arrow-left mr-1"></i>
+                Back
+            </a>
+        </div>
+    </div>
+
+    @if ($errors->any())
+        <div class="alert alert-danger mt-3">
+            <strong>Whoops!</strong> There were some problems with your input.<br><br>
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
+
     <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -49,7 +75,6 @@
                             </div>
                         </div>
                         <div class="text-center mt-3">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                             <button type="submit" class="btn btn-primary">Submit</button>
                         </div>
                     </form>

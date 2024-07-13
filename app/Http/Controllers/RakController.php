@@ -30,7 +30,9 @@ class RakController extends Controller
                     $btn = '
                     <form action="' . route('raks.destroy', $row->id) . '" method="POST">
                         <a class="btn btn-info" href="' . route('raks.show', $row->id) . '"><i class="fas fa-eye"></i></a>
-                        <a class="btn btn-primary" href="' . route('raks.edit', $row->id) . '"><i class="fas fa-edit"></i></a>
+                        <button type="button" class="btn btn-primary edit-btn" data-id="' . $row->id . '" data-toggle="modal" data-target="#editModal">
+                            <i class="fas fa-edit"></i>
+                        </button>
                         ' . csrf_field() . method_field('DELETE') . '
                         <button type="submit" class="btn btn-danger"><i class="fas fa-trash"></i></button>
                     </form>';
@@ -42,7 +44,6 @@ class RakController extends Controller
                 ->rawColumns(['action'])
                 ->make(true);
         }
-
         return view('raks.index');
     }
 
@@ -92,11 +93,17 @@ class RakController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Rak $rak)
+    public function edit($id)
     {
+        $rak = Rak::find($id);
         $gudangs = Gudang::all();
-        return view('raks.edit', compact('gudangs','rak'));
+        return response()->json([
+            'rak' => $rak,
+            'gudangs' => $gudangs
+        ]);
     }
+
+
 
     /**
      * Update the specified resource in storage.

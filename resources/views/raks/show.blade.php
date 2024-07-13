@@ -28,13 +28,15 @@
                     <div class="col-md-12 mb-3">
                         <h4 class="text-primary">Informasi Rak Buku</h4>
                     </div>
-                    <div class="col-md-4 mb-3">
-                        <strong class="text-dark">Nomor Rak:</strong>
-                        <p class="text-muted">{{ $rak->no_rak }}</p>
+                    <div class="col-md-12 mb-3">
+                        <label for="no_rak" class="form-label"><strong>Nomor Rak:</strong></label>
+                        <input type="text" disabled name="no_rak" value="{{ $rak->no_rak }}" class="form-control"
+                            placeholder="Nomor Rak">
                     </div>
-                    <div class="col-md-4 mb-3">
-                        <strong class="text-dark">Lokasi Gudang:</strong>
-                        <p class="text-muted">{{ $rak->gudang->lokasi_gudang }}</p>
+                    <div class="col-md-12 mb-3">
+                        <label for="no_rak" class="form-label"><strong>Lokasi Gudang:</strong></label>
+                        <input type="text" disabled name="no_rak" value="{{ $rak->gudang->lokasi_gudang }}" class="form-control"
+                            placeholder="Nomor Rak">
                     </div>
                 </div>
             </div>
